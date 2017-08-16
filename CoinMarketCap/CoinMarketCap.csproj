@@ -1,0 +1,29 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard1.3</TargetFramework>
+    <Authors>Christopher.Haws</Authors>
+    <Company>Christopher.Haws</Company>
+    <Description>A .NET implementation for the CoinMarketCap API for cryptocurrencies.</Description>
+    <PackageLicenseUrl>https://github.com/ChristopherHaws/coinmarketcap-dotnet/blob/master/LICENSE.md</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/ChristopherHaws/coinmarketcap-dotnet</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/ChristopherHaws/coinmarketcap-dotnet.git</RepositoryUrl>
+    <RepositoryType>Git</RepositoryType>
+    <PackageTags>CoinMarketCap Crypto Currency BitCoin Ethereum LiteCoin AltCoin</PackageTags>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Year>$([System.DateTime]::Now.ToString(yy))</Year>
+    <DayOfYear>$([System.DateTime]::Now.DayOfYear.ToString(000))</DayOfYear>
+    <VersionPrefix>1.0.0</VersionPrefix>
+    <RevisionForDay>01</RevisionForDay>
+    <VersionSuffix>ci-$(Year)$(DayOfYear)$(RevisionForDay)</VersionSuffix>
+    <InformationalVersion>$(VersionPrefix)-$(VersionSuffix)</InformationalVersion>
+  </PropertyGroup>
+    
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
+  </ItemGroup>
+
+</Project>
