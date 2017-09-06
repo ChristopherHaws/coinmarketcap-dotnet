@@ -6,14 +6,14 @@ namespace CoinMarketCap
 {
 	public static class GetTickersQuery
 	{
-		public static async Task<Ticker[]> GetTickersAsync(this CoinMarketCapClient client)
+		public static async Task<Ticker[]> GetTickersAsync(this CoinMarketCapClient client, Int32 limit = 100)
 		{
 			var request = new CoinMarketCapRequest
 			{
 				RelativeUrl = "/v1/ticker",
 				Properties = new Dictionary<String, String>
 				{
-					["limit"] = "100"
+					["limit"] = limit.ToString()
 				}
 			};
 
