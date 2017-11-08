@@ -18,10 +18,10 @@ namespace CoinMarketCap
 		public Decimal Rank { get; set; }
 
 		[JsonProperty("price_usd")]
-		public Decimal PriceInUsd { get; set; }
+		public Decimal? PriceInUsd { get; set; }
 
 		[JsonProperty("price_btc")]
-		public Decimal PriceInBtc { get; set; }
+		public Decimal? PriceInBtc { get; set; }
 
 		[JsonProperty("24h_volume_usd")]
 		public Decimal? VolumeUsd24Hour { get; set; }
@@ -45,6 +45,6 @@ namespace CoinMarketCap
 		public Decimal? PercentChange7Day { get; set; }
 
 		[JsonProperty("last_updated")]
-		public Int64 LastUpdated { get; set; }
+		public Int64? LastUpdated { get; set; }
 	}
 }
